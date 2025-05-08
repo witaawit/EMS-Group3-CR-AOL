@@ -5,47 +5,47 @@ import java.io.*;
 import java.util.*;
 
 /*
- * smell code: large class
+ * smell code: large class (nindy)
  * reason: the class is too large and has too many responsibilities
  * solution: extract class
  * 
- * smell code: comments
+ * smell code: comments (wita)
  * reason: the code is self-explanatory and does not need comments
  * solution: remove comments
  * 
- * smell code: long method
+ * smell code: long method (Leo)
  * reason: the method is too long and has too many responsibilities
  * solution: extract method
  * 
- * smell code: lazy class
+ * smell code: lazy class (leo)
  * reason: the class is too small and does not have enough responsibilities
  * solution: move method
  * 
- * smell code: data class
+ * smell code: data class (nindy)
  * reason: the class is too dependent on other classes
  * solution: move method
  *
- * smell code: duplicate code
+ * smell code: duplicate code (bryan gay)
  * reason: the code is duplicated in multiple places
  * solution: extract method
  * 
- * smell code: primitive obsession
+ * smell code: primitive obsession (wita)
  * reason: the code uses primitive types instead of objects
  * solution: replace primitive with object
  * 
- * smell code: dead code
+ * smell code: dead code (wita)
  * reason: the code is never used in Employee_Remove
  * solution: remove code
  * 
- * smell code: feature envy
+ * smell code: feature envy (bryan)
  * reason: the code is too dependent on other classes
  * solution: move method
  * 
- * smell code: data clumps
+ * smell code: data clumps (bryan)
  * reason: the code uses multiple variables that are always used together
  * solution: extract class
  * 
- * smell code: inappropriate intimacy
+ * smell code: inappropriate intimacy (Leo)
  * reason: the code is too dependent on other classes
  * solution: move method
  * 
