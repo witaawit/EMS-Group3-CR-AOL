@@ -1,11 +1,8 @@
 package Solution;
-/******************** Importing Essential Libraries ************************/
 
 import java.io.*;
 import java.util.*;
 
-
-/*************************** MENU OF EMS ****************************/
 
 class MainMenu
 {
@@ -25,8 +22,6 @@ class MainMenu
 
   }
 }
-
-/************************ To add details of Employee *********************/
 
 class Employee_Add
 {
@@ -60,9 +55,46 @@ class Employee_Add
     }
 }
 
-/************************* Taking Employee Details ************************/
+/*buat public class terus pindahin ke file baru ya nin*/
+class Employee {
+    private String id;
+    private String name;
+    private String fatherName;
+    private Email email;
+    private String position;
+    private Salary salary;
+    private PhoneNumber contact;
 
-class EmployDetail
+    public Employee(String id, String name, String fatherName, Email email,
+                    String position, Salary salary, PhoneNumber contact) {
+        this.id = id;
+        this.name = name;
+        this.fatherName = fatherName;
+        this.email = email;
+        this.position = position;
+        this.salary = salary;
+        this.contact = contact;
+    }
+
+    public String getId() { return id; }
+    public String getName() { return name; }
+    public Email getEmail() { return email; }
+    public Salary getSalary() { return salary; }
+    public PhoneNumber getContact() { return contact; }
+
+    public String toFileString() {
+        return "Employee ID:" + id + "\n" +
+               "Employee Name     :" + name + "\n" +
+               "Father's Name     :" + fatherName + "\n" +
+               "Employee Contact  :" + contact + "\n" +
+               "Email Information :" + email + "\n" +
+               "Employee Position :" + position + "\n" +
+               "Employee Salary   :" + salary;
+    }
+}
+
+
+class EmployeeInput
 {
     String name;
     String father_name;
@@ -91,7 +123,6 @@ class EmployDetail
     }
 }
 
-/************************ To Show details of Employee *********************/
 
 class Employee_Show
 {
@@ -107,7 +138,6 @@ class Employee_Show
    }
 }
 
-/***************************** To Remove Employee *************************/
 
 class Employee_Remove
 {
@@ -129,7 +159,6 @@ class Employee_Remove
      }
 }
 
-/************************ To Update details of Employee ********************/
 
 class Employee_Update
 {
@@ -151,7 +180,6 @@ class Employee_Update
 }
 
 
-/************************ To Exit from the EMS Portal *********************/
 
 class CodeExit
 {
@@ -166,106 +194,96 @@ class CodeExit
 }
 
 
-/***************************** Main Class *******************************/
 class EmployManagementSystem
 {
+  static Scanner sc=new Scanner(System.in);
+  
+  public static void clearScreen(){
+    System.out.print("\033[H\033[2J");
+  }
+
+  public static void pressEnter(){
+    System.out.print("\nPress Enter to Continue...");
+    sc.nextLine();
+  }
+
+  public static String getEmployeeID(){
+    System.out.print("\nPlease Enter Employee's ID :");
+    return sc.nextLine();
+  }
+
+  public static void showUpdateInstructions(){
+    System.out.print("Please Enter the detail you want to Update :");
+    System.out.print("\nFor Example :\n");
+    System.out.println("If you want to Change the Name, then Enter Current Name and Press Enter. Then write the new Name then Press Enter. It will Update the Name.\n");
+  }
+  
   public static void main(String arv[])
   {
-    /** To clear the output Screen **/
-    System.out.print("\033[H\033[2J");
-
-    Scanner sc=new Scanner(System.in);
     Employee_Show epv =new Employee_Show();
-
-    int i=0;
-
-    /*** Callining Mainmenu Class function ****/
+    int choice=0;
     MainMenu obj1 = new MainMenu();
-    obj1.menu();
-
-    /*** Initialising loop for Menu Choices ***/
-    while(i<6)
+    while(choice<6)
     {
-
+      clearScreen();
+      obj1.menu();
       System.out.print("\nPlease Enter choice :");
-      i=Integer.parseInt(sc.nextLine());
+      choice=Integer.parseInt(sc.nextLine());
 
-      /** Switch Case Statements **/
-      switch(i)
+      switch(choice)
       {
         case 1:
         {
-        /** Creating class's object and calling Function using that object **/
-        Employee_Add ep =new Employee_Add();
-        ep.createFile();
-
-        System.out.print("\033[H\033[2J");
-        obj1.menu();
-        break;
+          Employee_Add ep =new Employee_Add();
+          ep.createFile();
+          break;
         }
         case 2:
         {
-          System.out.print("\nPlease Enter Employee's ID :");
-          String s=sc.nextLine();
+          String employeeID=getEmployeeID();
           try
           {
-            epv.viewFile(s);}
+            epv.viewFile(employeeID);}
             catch(Exception e){System.out.println(e);}
-
-
-            System.out.print("\nPress Enter to Continue...");
-            sc.nextLine();
-            System.out.print("\033[H\033[2J");
-            obj1.menu();
+            pressEnter();
             break;
           }
 
         case 3:
         {
-          System.out.print("\nPlease Enter Employee's ID :");
-          String s=sc.nextLine();
+          String employeeID=getEmployeeID();
           Employee_Remove epr =new Employee_Remove();
-          epr.removeFile(s);
+          epr.removeFile(employeeID);
 
-          System.out.print("\nPress Enter to Continue...");
-          sc.nextLine();
-          System.out.print("\033[H\033[2J");
-          obj1.menu();
+          pressEnter();
           break;
         }
         case 4:
         {
-            System.out.print("\nPlease Enter Employee's ID :");
-            String I=sc.nextLine();
-            try
-            {
-              epv.viewFile(I);
-            }
-            catch(Exception e)
-            {
-              System.out.println(e);
-            }
-            Employee_Update epu = new Employee_Update();
-            System.out.print("Please Enter the detail you want to Update :");
-    	      System.out.print("\nFor Example :\n");
-            System.out.println("If you want to Change the Name, then Enter Current Name and Press Enter. Then write the new Name then Press Enter. It will Update the Name.\n");
-            String s=sc.nextLine();
-            System.out.print("Please Enter the Updated Info :");
-            String n=sc.nextLine();
-            try
-            {
-              epu.updateFile(I,s,n);
-
-              System.out.print("\nPress Enter to Continue...");
-              sc.nextLine();
-              System.out.print("\033[H\033[2J");
-              obj1.menu();
-              break;
-            }
-            catch(IOException e)
-            {
-              System.out.println(e);
-            }
+          String employeeID=getEmployeeID();
+          try
+          {
+            epv.viewFile(employeeID);
+          }
+          catch(Exception e)
+          {
+            System.out.println(e);
+          }
+          Employee_Update epu = new Employee_Update();
+          showUpdateInstructions();
+          String oldinfo=sc.nextLine();
+          System.out.print("Please Enter the Updated Info :");
+          String newInfo=sc.nextLine();
+          try
+          {
+            epu.updateFile(employeeID,oldinfo,newInfo);
+            pressEnter();
+            break;
+          }
+          catch(IOException e)
+          {
+            System.out.println(e);
+          }
         }
         case 5:
         {

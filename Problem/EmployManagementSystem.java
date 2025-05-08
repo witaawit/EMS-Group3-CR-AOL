@@ -9,9 +9,9 @@ import java.util.*;
  * reason: the class is too large and has too many responsibilities
  * solution: extract class
  * 
- * smell code: comments (wita)
- * reason: the code is self-explanatory and does not need comments
- * solution: remove comments
+ * smell code: comments (wita) v
+ * reason: code sudah jelas dan tidak perlu comment untuk menjelaskan fungsional code tersebut 
+ * solution: remove comments 
  * 
  * smell code: long method (Leo)
  * reason: the method is too long and has too many responsibilities
@@ -25,8 +25,8 @@ import java.util.*;
  * reason: the class is too dependent on other classes
  * solution: move method
  *
- * smell code: duplicate code (bryan gay)
- * reason: the code is duplicated in multiple places
+ * smell code: duplicate code (bryan)
+ * reason: developer menggunakan code yang sama secara berulang tanpa membuat method (clearScreen, obj1.menu(), pressEnter
  * solution: extract method
  * 
  * smell code: primitive obsession (wita)
