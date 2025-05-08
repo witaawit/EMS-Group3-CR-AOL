@@ -1,7 +1,8 @@
+package Solution;
 /******************** Importing Essential Libraries ************************/
 
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
 
 /*************************** MENU OF EMS ****************************/

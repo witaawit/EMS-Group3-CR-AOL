@@ -1,8 +1,8 @@
 package Problem;
 /******************** Importing Essential Libraries ************************/
 
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
 /*
  * smell code: large class
@@ -21,6 +21,10 @@ import java.io.*;
  * reason: the class is too small and does not have enough responsibilities
  * solution: move method
  * 
+ * smell code: data class
+ * reason: the class is too dependent on other classes
+ * solution: move method
+ *
  * smell code: duplicate code
  * reason: the code is duplicated in multiple places
  * solution: extract method
