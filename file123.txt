@@ -1,7 +1,0 @@
-Employee ID:123
-Employee Name     :wita
-Father's Name     :lung
-Employee Contact  :0821
-Email Information :12
-Employee position :ceo
-Employee Salary   :500000000
