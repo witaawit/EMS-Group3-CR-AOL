@@ -1,0 +1,7 @@
+Employee ID:234
+Employee Name     :wit
+Father's Name     :w
+Employee Contact  :0812
+Email Information :23
+Employee position :cfo
+Employee Salary   :30490000
