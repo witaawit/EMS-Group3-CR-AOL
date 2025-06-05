@@ -5,7 +5,7 @@ import java.io.*;
 import java.util.*;
 
 /*
- * smell code: large class (nindy)
+ * smell code: large class (nindy) v
  * reason: the class is too large and has too many responsibilities
  * solution: extract class
  * 
@@ -25,15 +25,15 @@ import java.util.*;
  * reason: the class is too dependent on other classes
  * solution: move method
  *
- * smell code: duplicate code (bryan)
+ * smell code: duplicate code (bryan) v
  * reason: developer menggunakan code yang sama secara berulang tanpa membuat method (clearScreen, obj1.menu(), pressEnter
  * solution: extract method
  * 
- * smell code: primitive obsession (wita)
+ * smell code: primitive obsession (wita) v
  * reason: the code uses primitive types instead of objects
  * solution: replace primitive with object
  * 
- * smell code: dead code (wita)
+ * smell code: dead code (wita) v
  * reason: the code is never used in Employee_Remove
  * solution: remove code
  * 
@@ -53,7 +53,6 @@ import java.util.*;
 
 
 /*************************** MENU OF EMS ****************************/
-
 class MainMenu
 {
   public void menu()
@@ -74,7 +73,6 @@ class MainMenu
 }
 
 /************************ To add details of Employee *********************/
-
 class Employee_Add
 {
     public void createFile()
